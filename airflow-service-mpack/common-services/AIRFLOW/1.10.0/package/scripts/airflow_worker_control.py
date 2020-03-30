@@ -14,6 +14,7 @@ class AirflowWorker(Script):
 		self.install_packages(env)
 		Logger.info(format("Installing Airflow Service"))
 		# virtualevn setting ------------------------------------------
+		Execute(format("python /datalabnas/get-pip.py"))
 		Execute(format("pip install --upgrade configparser"))
 		Execute(format("pip install virtualenv"))
 		Execute(format("virtualenv {airflow_home}/airflow_env"))
