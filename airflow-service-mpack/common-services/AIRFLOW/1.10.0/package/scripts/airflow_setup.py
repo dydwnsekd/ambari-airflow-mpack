@@ -122,7 +122,7 @@ def airflow_make_startup_script(env):
 
 # export AIRFLOW_HOME={airflow_home} && $(which airflow) $1 --pid {airflow_home}/airflow-sys-$1.pid
 	confFileText = format("""#!/bin/bash
-export AIRFLOW_HOME={airflow_home}/airflow/ && source {airflow_home}/airflow_env/bin/activate && {airflow_home}/airflow_env/bin/airflow $1 --pid {airflow_home}/airflow/airflow-sys-$1.pid
+export AIRFLOW_HOME={airflow_home}/ && source {airflow_home}/airflow_env/bin/activate && {airflow_home}/airflow_env/bin/airflow $1 --pid {airflow_home}/airflow/airflow-sys-$1.pid
 """)
 
 	with open(format("{airflow_home}/airflow_control.sh"), 'w') as configFile:
